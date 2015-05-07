@@ -16,21 +16,22 @@
         <div class="form-group">
             <label for="fieldName" class="col-sm-2 control-label">Field Name:</label>
             <div class="col-sm-5">
-                <input type="text" class="form-control" id="fieldName" name= "fieldName<?php echo '-field_no-'.$i?>" placeholder="Enter the Name of the field" />
+                <input type="text" class="form-control" id="fieldName" name= "name<?php echo '-'.$i?>" placeholder="Enter the Name of the field" />
             </div>
         </div>
      
         <div class="form-group">
             <label for="fieldType" class="col-sm-2 control-label">Field Type: </label>
             <div class="col-sm-5">
-                <input type="text" class="form-control" id="fieldType" name="fieldType<?php echo '-field_no-'.$i?>" placeholder="Enter the type of the field. e.g text, password etc" />
+                
+                <input type="text" class="form-control" id="fieldType" name="type<?php echo '-'.$i?>" placeholder="Enter the type of the field. e.g text, password etc" />
             </div>
         </div>
 
         <div class="form-group">
             <label for="required" class="col-sm-2 control-label">Mandatory:</label>
             <div class="col-sm-5">
-                <select class="form-control" name="fieldMandatory<?php echo '-field_no-'.$i?>" id="fieldMandatory">
+                <select class="form-control" name="required<?php echo '-'.$i?>" id="fieldMandatory">
                     <option value="Y">Yes</option>
                     <option value="N">No</option>
                 </select>

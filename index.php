@@ -65,7 +65,7 @@
 switch (ENVIRONMENT)
 {
 	case 'development':
-		error_reporting(-1);
+		error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT & ~E_USER_NOTICE & ~E_USER_DEPRECATED);
 		ini_set('display_errors', 1);
 	break;
 
@@ -250,7 +250,7 @@ switch (ENVIRONMENT)
 
 		define('APPPATH', BASEPATH.$application_folder.DIRECTORY_SEPARATOR);
 	}
-
+      
 	// The path to the "views" folder
 	if ( ! is_dir($view_folder))
 	{
@@ -260,7 +260,8 @@ switch (ENVIRONMENT)
 		}
 		elseif ( ! is_dir(APPPATH.'views'.DIRECTORY_SEPARATOR))
 		{
-			header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
+	
+                        header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
 			echo 'Your view folder path does not appear to be set correctly. Please open the following file and correct this: '.SELF;
 			exit(3); // EXIT_CONFIG
 		}

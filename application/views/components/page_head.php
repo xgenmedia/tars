@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed'); ?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap</title>
+    <title><?php echo $site_name.' - '.$title;?></title>
     <!-- CSS -->
         <!-- Bootstrap CSS -->
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">

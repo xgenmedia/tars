@@ -13,6 +13,9 @@ class Formfields extends MY_Controller {
         //Page parts
         $this->data['title'] = 'Fields Manage';
         $this->data['subview'] = 'formfields/index';
+        
+        //fetching the data
+        $this->data['fields'] = $this->formfields_model->get_by(array('is_active'=>'Y')); 
 
         //Loading the view
         $this->load->view('__layout_main', $this->data);

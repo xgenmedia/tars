@@ -16,12 +16,10 @@ class Formbuilder extends MY_Controller {
    
     public function index(){
         $this->data['title'] = 'Form Manage';
-        $this->data['subview'] = 'formbuilder/manageform';
+        $this->data['subview'] = 'formbuilder/index';
         $this->load->view('__layout_main', $this->data);
     }
-    public function testcreatedforms(){
-        
-    }
+    
     
         public function formdescription() {
 
@@ -133,11 +131,17 @@ class Formbuilder extends MY_Controller {
                         }
                      }
                 }
-            redirect(array('formbuilder/manageform/'));
+            redirect(array('formbuilder/index/'));
         }
         // loading the  view
         $this->load->view('__layout_main', $this->data);
         //die(__FILE__.' '.__LINE__);
     }
-
+   public function testcreatedforms(){
+        $this->data['title'] = 'Test Forms';
+        $this->data['subview'] = 'formbuilder/testcreatedforms';
+        $this->load->view('__layout_main', $this->data);
+        
+        
+    }
 }

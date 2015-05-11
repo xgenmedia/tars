@@ -11,7 +11,8 @@
 </style>
 <div id="manageWrapper">
     <div id="formNavigation">
-    	<a href="<?php echo base_url('formbuilder/createform') ?>">Create Form</a>
+    	<a href="<?php echo base_url('formbuilder/createform') ?>">Create Form</a> | 
+        <a href="<?php echo base_url('formfields/createfield') ?>">Create Field</a>
     </div>
     <?php ?>
     

@@ -7,7 +7,8 @@
     } 
 </style>
 <div id="formfieldWraper">
-    <a href="<?php echo base_url('/formfields/createfield'); ?>">Create Field</a>
+    <a href="<?php echo base_url('/formfields/createfield'); ?>">Create Field</a> \ 
+    <a href="<?php echo base_url('/formbuilder/createform'); ?>">Create Form</a>
     <?php ?>
     <section id="mainContent">
         <table class="table" id="example">

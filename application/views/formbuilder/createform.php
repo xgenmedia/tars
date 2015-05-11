@@ -5,11 +5,21 @@
     #formfieldsWrapper h4{
         margin-left: 50px;
     }
+    #formNavigation{
+        margin-left: 100px;
+    }
 </style>
-<?php
-    echo form_open("", array('class' => 'form-horizontal'));
-?>
+<div>
+
+    
 <div id="createformWrapper">
+
+    <div id="formNavigation">
+    	<a href="<?php echo base_url('formbuilder/index') ?>">View Forms</a>
+    </div>
+</div>
+    
+    <?php echo form_open("", array('class' => 'form-horizontal')); ?>
     <div class="form-group" style="margin-top:30px">
         
         <div class="form-group">

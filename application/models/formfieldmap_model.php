@@ -2,10 +2,9 @@
 /**
 * 
 */
-class Formbuilder_fields_model extends MY_Model
+class Formfieldmap_model extends MY_Model
 {
-	
-	protected $_table_name='form_field';
+	protected $_table_name='form_field_rel';
 	function __construct()
 	{
 		parent::__construct();

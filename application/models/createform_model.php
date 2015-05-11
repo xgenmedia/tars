@@ -2,10 +2,10 @@
 /**
 * 
 */
-class Formbuilder_fields_model extends MY_Model
+class Createform_model extends MY_Model
 {
 	
-	protected $_table_name='form_field';
+	protected $_table_name='form';
 	function __construct()
 	{
 		parent::__construct();

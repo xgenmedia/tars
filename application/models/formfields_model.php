@@ -2,7 +2,7 @@
 /**
 * 
 */
-class Formbuilder_fields_model extends MY_Model
+class Formfields_model extends MY_Model
 {
 	
 	protected $_table_name='form_field';

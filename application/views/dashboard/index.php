@@ -5,20 +5,7 @@
 	</ol>
 	<div class="row-fluid">
 		 <div class="col-sm-3">
-		 		<div class="list-group">
-				      <a href="#" class="list-group-item active">Resource</a>
-				      <a href="#" class="list-group-item">User Group</a>
-				      
-				      <a href="#" class="list-group-item">Products Category</a>
-				      <a href="#" class="list-group-item ">Products</a>
-					  <a href="#" class="list-group-item">Clients</a>
-					  <a href="#" class="list-group-item">Dept</a>
-					  <a href="#" class="list-group-item">Employee</a>
-					  <a href="#" class="list-group-item">Project</a>
-					  <a href="#" class="list-group-item">Quotations</a>
-					  <a href="#" class="list-group-item">Approve Project</a>
-					  <a href="#" class="list-group-item">Settings</a>
-				</div>
+		 			<?php $this->load->view("components/left_side_bar");?>
 		 </div>
 		 <div class="col-sm-9">
 		 		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

@@ -13,44 +13,35 @@ class Login extends MY_Controller {
     }
 
     public function index() {
-
-        
-        $this->data['subview'] = 'login/index';
-
-        if ($this->form_validation->run()) {
-
-            $data = array(
-                'username' => $this->input->post('email'),
-                'email' => $this->input->post('email'),
-                'phone' => $this->input->post('phone'),
-                'name' => $this->input->post('name'),
-            );
-            if ($this->input->post('password') != '') {
-                $data = array_merge($data, array('password' => $this->input->post('password')));
-            }
-
-            if ($id) {
-                if ($this->user_model->save($data, $id)) {
-                    $this->session->set_flashdata('success_message', 'Record edited successfully');
-                } else {
-                    $this->session->set_flashdata('error_message', 'Error found to edit record');
-                }
+        $rules = array('email' => array(
+                                        'field' => 'email',
+                                        'label' => 'Email',
+                                        'rules' => 'required|valid_email'
+                                       ),
+                        'password' => array(
+                                        'field' => 'password',
+                                        'label' => 'Password',
+                                        'rules' => 'required'
+                                       )
+                      );
+        $this->form_validation->set_rules($rules);
+        if($this->form_validation->run() == TRUE){
+            $this->user_model->login();
+            if($this->user_model->loggedin()) {
+                redirect(array("dashboard"));
             } else {
-                if ($this->user_model->save($data)) {
-                    $this->session->set_flashdata('success_message', 'Record added successfully');
-                } else {
-                    $this->session->set_flashdata('error_message', 'Error found to add record');
-                }
+                $this->session->set_flashdata('loginErr',"Sorry, the member email and password you entered do not match.");
+                redirect(array("login"));
             }
-            //
-            redirect(array('user'));
         }
-
         // load view
-        $this->load->view('__layout_login', $this->data);
+        $this->data['subview'] = 'login/index'; 
+        $this->load->view('__layout_login',$this->data);
+        
     }
 
     public function logout() {
+        $this->user_model->logout();
         redirect(array('login'));
     }
 

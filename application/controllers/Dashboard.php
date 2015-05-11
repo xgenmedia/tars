@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /**
 * 
 */
-class Dashboard extends Admin_Controller
+class Dashboard extends MY_Controller
 {
 	
 	function __construct()
@@ -13,8 +13,8 @@ class Dashboard extends Admin_Controller
 
 	public function index()
 	{
-		$this->data['subview'] = 'dashboard/index';
 		// Load view
+		$this->data['subview'] = 'dashboard/index';
 		$this->load->view("__layout_main",$this->data);
 	}
 }
